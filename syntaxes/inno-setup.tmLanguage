@@ -37,7 +37,7 @@
                     <string>entity.name.section.inno</string>
                 </dict>
             </dict>
-            <key>name</key>
+            <key>contentName</key>
             <string>source.pascal.embedded.inno</string>
             <key>patterns</key>
             <array>
