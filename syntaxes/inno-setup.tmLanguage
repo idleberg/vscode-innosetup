@@ -29,14 +29,6 @@
             </dict>
             <key>end</key>
             <string>^(?i)(?=\[(Code|Components|CustomMessages|Dirs|Files|Icons|INI|InstallDelete|LangOptions|Languages|Messages|Registry|Run|Setup|Tasks|Types|UninstallDelete|UninstallRun)\]$)</string>
-            <key>endCaptures</key>
-            <dict>
-                <key>1</key>
-                <dict>
-                    <key>name</key>
-                    <string>entity.name.section.inno</string>
-                </dict>
-            </dict>
             <key>contentName</key>
             <string>source.pascal.embedded.inno</string>
             <key>patterns</key>
