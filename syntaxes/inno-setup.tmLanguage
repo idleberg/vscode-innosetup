@@ -28,7 +28,7 @@
                 </dict>
             </dict>
             <key>end</key>
-            <string>^(?i)(?=\[(Components|CustomMessages|Dirs|Files|Icons|INI|InstallDelete|LangOptions|Languages|Messages|Registry|Run|Setup|Tasks|Types|UninstallDelete|UninstallRun)\]$)</string>
+            <string>^(?i)(?=\[(Code|Components|CustomMessages|Dirs|Files|Icons|INI|InstallDelete|LangOptions|Languages|Messages|Registry|Run|Setup|Tasks|Types|UninstallDelete|UninstallRun)\]$)</string>
             <key>endCaptures</key>
             <dict>
                 <key>1</key>
@@ -79,7 +79,7 @@
 
         <dict>
             <key>match</key>
-            <string>^(?i)\[(Components|CustomMessages|Dirs|Files|Icons|INI|InstallDelete|LangOptions|Languages|Messages|Registry|Run|Setup|Tasks|Types|UninstallDelete|UninstallRun)\]$</string>
+            <string>^(?i)\[(Code|Components|CustomMessages|Dirs|Files|Icons|INI|InstallDelete|LangOptions|Languages|Messages|Registry|Run|Setup|Tasks|Types|UninstallDelete|UninstallRun)\]$</string>
             <key>name</key>
             <string>entity.name.section.inno</string>
         </dict>
