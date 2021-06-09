@@ -18,7 +18,7 @@
         <!-- Inno Pascal section -->
         <dict>
             <key>begin</key>
-            <string>^(\[(?i)Code\])$</string>
+            <string>^\s*(\[(?i)Code\])\s*$</string>
             <key>beginCaptures</key>
             <dict>
                 <key>1</key>
@@ -28,7 +28,7 @@
                 </dict>
             </dict>
             <key>end</key>
-            <string>^(?i)(?=\[(Code|Components|CustomMessages|Dirs|Files|Icons|INI|InstallDelete|LangOptions|Languages|Messages|Registry|Run|Setup|Tasks|Types|UninstallDelete|UninstallRun)\]$)</string>
+            <string>^(?i)(?=\s*\[(Code|Components|CustomMessages|Dirs|Files|Icons|INI|InstallDelete|LangOptions|Languages|Messages|Registry|Run|Setup|Tasks|Types|UninstallDelete|UninstallRun)\]\s*$)</string>
             <key>contentName</key>
             <string>source.pascal.embedded.inno</string>
             <key>patterns</key>
@@ -71,9 +71,15 @@
 
         <dict>
             <key>match</key>
-            <string>^(?i)\[(Code|Components|CustomMessages|Dirs|Files|Icons|INI|InstallDelete|LangOptions|Languages|Messages|Registry|Run|Setup|Tasks|Types|UninstallDelete|UninstallRun)\]$</string>
-            <key>name</key>
-            <string>entity.name.section.inno</string>
+            <string>^\s*(?i)(\[(Code|Components|CustomMessages|Dirs|Files|Icons|INI|InstallDelete|LangOptions|Languages|Messages|Registry|Run|Setup|Tasks|Types|UninstallDelete|UninstallRun)\])\s*$</string>
+            <key>captures</key>
+            <dict>
+                <key>1</key>
+                <dict>
+                    <key>name</key>
+                    <string>entity.name.section.inno</string>
+                </dict>
+            </dict>
         </dict>
 
         <dict>
