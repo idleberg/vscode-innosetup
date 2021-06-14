@@ -17,7 +17,6 @@
         "lint:json": "jsonlint --quiet ./snippets/*.json",
         "lint:ts": "eslint ./src --ignore-path .gitignore",
         "lint": "npm-run-all  --parallel lint:*",
-        "postinstall": "node ./node_modules/vscode/bin/install",
         "start": "cross-env NODE_ENV=development node ./tools/build.cjs",
         "test": "npm run lint",
         "vscode:prepublish": "npm run build"
@@ -183,7 +182,7 @@
         "tslib": "^2.3.0",
         "tslint": "^6.1.3",
         "typescript": "^4.3.2",
-        "vscode": "^1.1.37"
+        "@types/vscode": "^1.0.0"
     },
     "babel": {
         "presets": [
