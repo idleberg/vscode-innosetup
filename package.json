@@ -2,7 +2,7 @@
     "name": "innosetup",
     "displayName": "Inno Setup",
     "description": "Language syntax, snippets and build system for Inno Setup",
-    "version": "1.6.0",
+    "version": "1.6.1",
     "publisher": "idleberg",
     "license": "MIT",
     "author": {
@@ -10,10 +10,14 @@
         "url": "http://github.com/idleberg"
     },
     "scripts": {
-        "build": "webpack --mode production",
+        "compile": "npm run build",
+        "build": "node ./tools/build.cjs",
         "dev": "npm run start",
-        "lint": "vscode-linter",
-        "start": "webpack --mode none --watch",
+        "fix": "eslint --fix ./src",
+        "lint:json": "jsonlint --quiet ./snippets/*.json",
+        "lint:ts": "eslint ./src --ignore-path .gitignore",
+        "lint": "npm-run-all  --parallel lint:*",
+        "start": "cross-env NODE_ENV=development node ./tools/build.cjs",
         "test": "npm run lint",
         "vscode:prepublish": "npm run build"
     },
@@ -158,21 +162,40 @@
     },
     "extensionDependencies": [],
     "dependencies": {
-        "vscode-get-config": "^0.2.0"
+        "vscode-get-config": "^0.4.0"
     },
     "devDependencies": {
-        "@types/node": "^14.14.2",
-        "husky": "^4.3.0",
-        "ts-loader": "^8.0.6",
+        "@babel/core": "^7.14.5",
+        "@babel/preset-env": "^7.14.5",
+        "@babel/register": "^7.14.5",
+        "@types/node": "^15.12.2",
+        "@typescript-eslint/eslint-plugin": "^4.26.1",
+        "@typescript-eslint/parser": "^4.26.1",
+        "cross-env": "^7.0.3",
+        "esbuild": "^0.12.8",
+        "eslint": "^7.28.0",
+        "eslint-plugin-json": "^3.0.0",
+        "husky": ">=4 <5",
+        "jsonlint": "^1.6.3",
+        "lint-staged": "^11.0.0",
+        "npm-run-all": "^4.1.5",
+        "tslib": "^2.3.0",
         "tslint": "^6.1.3",
-        "@types/vscode": "^1.0.0",
-        "vscode-linter": "^0.3.1",
-        "webpack": "^4.44.2",
-        "webpack-cli": "^3.3.12"
+        "typescript": "^4.3.2",
+        "@types/vscode": "^1.0.0"
+    },
+    "babel": {
+        "presets": [
+            "@babel/env"
+        ]
     },
     "husky": {
         "hooks": {
-            "pre-commit": "npm run test"
+            "pre-commit": "lint-staged"
         }
+    },
+    "lint-staged": {
+        "*.ts": "eslint --cache --fix",
+        "*.json": "jsonlint --quiet"
     }
 }
