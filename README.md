@@ -1,4 +1,4 @@
-> 🚨 This package is no longer under development. If you wish to take over this project, please [get in touch](https://github.com/idleberg/discussion/discussions/2)!
+> **Warning** This package is no longer under development and will soon be deprecated. Have a look at [chouzz/vscode-innosetup](https://github.com/chouzz/vscode-innosetup) for an actively maintained fork.
 
 # Inno Setup for Visual Studio Code
 
