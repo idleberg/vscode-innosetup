@@ -1,4 +1,4 @@
-import vscode from 'vscode';
+import * as vscode from 'vscode';
 import { getConfig } from 'vscode-get-config';
 
 export default {
